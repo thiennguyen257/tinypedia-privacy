@@ -11,6 +11,7 @@ Google Play asks for this URL in Play Console (App content, Privacy policy) and 
 | File | Purpose |
 |---|---|
 | `index.html` | The policy: Vietnamese first, then English, one page, no scripts, no trackers, no external assets |
+| `credits.html` | Credits for the CC BY photos shown in the app's Google Play screenshots (linked from the store description). Generated, do not edit by hand: `python app/tool/store_art.py --credits <this repo>` in the app repo, whenever the screenshots change |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are, without a Jekyll build |
 | `.gitignore` | Keeps editor and OS files out of the repo |
 | `.gitattributes` | Stores text files with LF line endings |
@@ -49,6 +50,7 @@ Wording rule: describe the current version only. Do not promise "always free", "
 | Effective | Change |
 |---|---|
 | 2026-10-30 | First version, for the first release (1.0.0): no data collected or shared, no ads, no account, no Internet permission, progress kept on the device only (backup and device transfer off), Azure synthetic voice made before release, developer CrisKisa |
+| 2026-10-30 | `credits.html` added (photo credits for the store screenshots); the policy itself unchanged |
 
 ## Contact
 
