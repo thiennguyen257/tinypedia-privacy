@@ -50,7 +50,7 @@ Wording rule: describe the current version only. Do not promise "always free", "
 | Effective | Change |
 |---|---|
 | 2026-10-30 | First version, for the first release (1.0.0): no data collected or shared, no ads, no account, no Internet permission, progress kept on the device only (backup and device transfer off), Azure synthetic voice made before release, developer CrisKisa |
-| 2026-10-30 | `credits.html` added (photo credits for the store screenshots); the policy itself unchanged |
+| 2026-10-30 | `credits.html` added (photo credits for the store screenshots); darker accent colour on both pages for readable links (WCAG AA); the policy text unchanged |
 
 ## Contact
 
