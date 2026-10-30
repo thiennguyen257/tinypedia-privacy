@@ -1,6 +1,6 @@
 # Tinypedia privacy policy
 
-The public privacy policy of the Android app **Tinypedia: Bé Khám Phá** (`com.tinypedia.app`), a picture dictionary for children aged 3 to 6.
+The public privacy policy of the Android app **Tinypedia: Bé Khám Phá** (`com.tinypedia.app`) by the developer **CrisKisa**, a picture dictionary for children aged 3 to 6.
 
 **Live page:** https://thiennguyen257.github.io/tinypedia-privacy/
 
@@ -32,7 +32,8 @@ The policy describes one app version. Update it **before** releasing a version t
 - permissions, above all `INTERNET` (the app has none today);
 - ads, accounts, analytics, crash reporting or any third-party SDK that handles data;
 - in-app purchases (none today);
-- the contact e-mail.
+- the contact e-mail or the developer name (it must match the name on the store listing);
+- Android backup (the app turns off cloud backup and device-to-device transfer today).
 
 Then, in the same change:
 
@@ -47,8 +48,8 @@ Wording rule: describe the current version only. Do not promise "always free", "
 
 | Effective | Change |
 |---|---|
-| 2026-10-30 | First version, for the first release (1.0.0): no data collected or shared, no ads, no account, no Internet permission, progress kept on the device only, Azure synthetic voice made before release |
+| 2026-10-30 | First version, for the first release (1.0.0): no data collected or shared, no ads, no account, no Internet permission, progress kept on the device only (backup and device transfer off), Azure synthetic voice made before release, developer CrisKisa |
 
 ## Contact
 
-criskisa01@gmail.com
+CrisKisa, criskisa01@gmail.com
