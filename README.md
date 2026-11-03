@@ -29,7 +29,7 @@ GitHub Pages serves the `main` branch, folder `/ (root)` (repo Settings, Pages).
 
 The policy describes one app version. Update it **before** releasing a version that changes any of these:
 
-- what the app stores on the device (today: stories heard, items seen, puzzle stars and best times with one unfinished puzzle, maze levels done with best times);
+- what the app stores on the device (today: stories heard, items seen, puzzle levels done with best times and one unfinished puzzle, maze levels done with best times);
 - permissions, above all `INTERNET` (the app has none today);
 - ads, accounts, analytics, crash reporting or any third-party SDK that handles data;
 - in-app purchases (none today);
@@ -51,6 +51,7 @@ Wording rule: describe the current version only. Do not promise "always free", "
 |---|---|
 | 2026-10-30 | First version, for the first release (1.0.0): no data collected or shared, no ads, no account, no Internet permission, progress kept on the device only (backup and device transfer off), Azure synthetic voice made before release, developer CrisKisa |
 | 2026-10-30 | `credits.html` added (photo credits for the store screenshots); darker accent colour on both pages for readable links (WCAG AA); the policy text unchanged |
+| 2026-11-03 | The app's stars now come from levels done, not from times: the jigsaw line says "levels done with their best times" (vi and en), no "stars" or game wording; new look (header band in the app's colours, summary cards, inline SVG icons, sticky language switch, dark mode and print styles), still one page with no scripts and no external assets |
 
 ## Contact
 

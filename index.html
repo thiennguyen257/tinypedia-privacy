@@ -5,14 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tinypedia: Bé Khám Phá – Chính sách quyền riêng tư / Privacy Policy</title>
 <meta name="description" content="Chính sách quyền riêng tư của ứng dụng Tinypedia: Bé Khám Phá. Privacy policy of the Tinypedia: Bé Khám Phá app.">
+<meta name="color-scheme" content="light dark">
 <style>
+  /* One page, no scripts, no external assets: icons are inline SVG, fonts
+     are the system's. Colours follow the app (warm cream, orange, green,
+     blue); links use a darker orange for WCAG AA contrast. */
   :root {
-    --bg: #fffaf2;
+    --bg: #fff8e7;
     --text: #2b2118;
     --muted: #6b5e52;
     --accent: #b35f00;
     --card: #ffffff;
-    --line: #eadfce;
+    --line: #f0e2c8;
+    --orange: #ff8f00;
+    --green: #43a047;
+    --blue: #1e88e5;
+    --red: #e53935;
+    --soft-orange: #fff1dc;
+    --soft-green: #e8f5e9;
+    --soft-blue: #e3f2fd;
+    --shadow: 0 6px 20px rgba(120, 72, 0, 0.10);
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -22,121 +34,309 @@
       --accent: #ffad42;
       --card: #26211c;
       --line: #3a322a;
+      --soft-orange: #3a2c18;
+      --soft-green: #1f3121;
+      --soft-blue: #1a2a3a;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     }
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+    overflow-wrap: anywhere;
   }
-  main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
-  h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 4px; }
-  h2 { font-size: 1.25rem; margin: 2rem 0 0.5rem; color: var(--accent); }
-  h3 { font-size: 1.05rem; margin: 1.4rem 0 0.3rem; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  strong { font-weight: 700; }
+
+  /* Header band, like the app's coloured headers. */
+  header {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(135deg, #ff8f00 0%, #fb8c00 45%, #f4511e 100%);
+    border-radius: 0 0 32px 32px;
+    padding: 40px 16px 72px;
+  }
+  header .inner { max-width: 760px; margin: 0 auto; position: relative; }
+  .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .logo {
+    flex: none; width: 60px; height: 60px; border-radius: 18px;
+    background: #fff; display: grid; place-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  header h1 { font-size: 1.75rem; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+  header .tag { margin: 2px 0 0; opacity: 0.95; font-size: 1.05rem; }
+  .effective {
+    display: inline-flex; align-items: center; gap: 8px; max-width: 100%;
+    margin-top: 18px; padding: 6px 14px; border-radius: 18px;
+    background: rgba(255, 255, 255, 0.2); font-size: 0.95rem;
+  }
+  .confetti { position: absolute; inset: 0; pointer-events: none; }
+
+  main { max-width: 760px; margin: -48px auto 0; padding: 0 16px 48px; position: relative; }
+
+  /* Language switch: sticks to the top while reading. */
+  nav {
+    position: sticky; top: 10px; z-index: 2;
+    display: flex; gap: 8px; justify-content: center;
+    padding: 6px; margin: 0 auto 20px; width: fit-content;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 999px; box-shadow: var(--shadow);
+  }
+  nav a {
+    padding: 6px 18px; border-radius: 999px; color: var(--text);
+    text-decoration: none; font-weight: 600;
+  }
+  nav a:hover, nav a:focus-visible { background: var(--soft-orange); outline: none; }
+
+  /* The three promises, as cards. */
+  .promises {
+    display: grid; gap: 12px; margin: 4px 0 8px;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    list-style: none; padding: 0;
+  }
+  .promise {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px; border-radius: 18px; margin: 0;
+  }
+  .promise svg { flex: none; }
+  .p1 { background: var(--soft-green); }
+  .p2 { background: var(--soft-orange); }
+  .p3 { background: var(--soft-blue); }
+
+  section.lang {
+    background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+    padding: 8px 22px 22px; margin-top: 24px; box-shadow: var(--shadow);
+  }
+  section.lang > h2 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.35rem; margin: 18px 0 6px; color: var(--accent);
+  }
+  .flag {
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+    padding: 2px 10px; border-radius: 999px; background: var(--soft-orange); color: var(--accent);
+  }
+  .block { border-top: 1px dashed var(--line); padding-top: 4px; margin-top: 18px; }
+  .block h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.08rem; margin: 14px 0 4px;
+  }
+  .icon {
+    flex: none; width: 34px; height: 34px; border-radius: 11px;
+    display: grid; place-items: center;
+  }
+  .i-orange { background: var(--soft-orange); color: var(--orange); }
+  .i-green { background: var(--soft-green); color: var(--green); }
+  .i-blue { background: var(--soft-blue); color: var(--blue); }
   p, li { margin: 0.4rem 0; }
   ul { padding-left: 1.3rem; }
-  .meta { color: var(--muted); margin: 0 0 1rem; }
-  nav { display: flex; gap: 12px; flex-wrap: wrap; margin: 1rem 0 0; }
-  nav a {
-    padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line);
-    background: var(--card); color: var(--text); text-decoration: none;
+  ul.kept { list-style: none; padding-left: 0; }
+  ul.kept li { position: relative; padding-left: 28px; }
+  ul.kept li::before {
+    content: ""; position: absolute; left: 4px; top: 0.5em;
+    width: 12px; height: 12px; border-radius: 4px; background: var(--orange);
+    transform: rotate(45deg);
   }
-  section {
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
-    padding: 4px 20px 16px; margin-top: 24px;
+  .contact {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    margin-top: 10px; padding: 14px 16px; border-radius: 18px; background: var(--soft-orange);
   }
-  a { color: var(--accent); }
+  .mail {
+    display: inline-block; padding: 8px 16px; border-radius: 999px;
+    background: var(--card); border: 1px solid var(--line);
+    font-weight: 700; text-decoration: none;
+  }
+  footer { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 28px; }
+
+  @media (max-width: 480px) {
+    header { padding: 28px 16px 64px; border-radius: 0 0 24px 24px; }
+    header h1 { font-size: 1.45rem; }
+    section.lang { padding: 6px 16px 18px; }
+  }
+  @media print {
+    header { background: none; color: var(--text); padding: 0 0 12px; }
+    .confetti, nav { display: none; }
+    main { margin-top: 0; }
+    section.lang { box-shadow: none; break-inside: auto; }
+  }
 </style>
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6Z"/></symbol>
+    <symbol id="i-noads" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 0 1 6.3 12.9L7.1 5.7A8 8 0 0 1 12 4ZM4 12c0-1.8.6-3.5 1.7-4.9l11.2 11.2A8 8 0 0 1 4 12Z"/></symbol>
+    <symbol id="i-offline" viewBox="0 0 24 24"><path fill="currentColor" d="m2.3 3.7 1.4-1.4 18 18-1.4 1.4-3.4-3.4A2.5 2.5 0 1 1 12 15.5l-2.3-2.3a5 5 0 0 0-1.5 1.3L6.8 13a7 7 0 0 1 1.5-1.4L6 9.3A10 10 0 0 0 3.9 11L2.5 9.6A12 12 0 0 1 4.6 7.9L2.3 3.7Zm9.7 4.3c3 0 5.9 1.2 8 3.4l-1.4 1.4a9.4 9.4 0 0 0-3.4-2.2L12.6 8H12Zm0-4c4.2 0 8.2 1.7 11.1 4.6l-1.4 1.4A13.7 13.7 0 0 0 9.5 6.2L7.8 4.5C9.1 4.2 10.6 4 12 4Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 3v13h10V5H7Zm5 14.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></symbol>
+    <symbol id="i-voice" viewBox="0 0 24 24"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 13h14l-4.5-6-3.5 4.5-2.5-3L5 17Zm3.5-7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.5l8 5 8-5V7H4Zm16 2.8-8 5-8-5V17h16V9.8Z"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path fill="currentColor" d="M4 3.5v17l9.3-8.5L4 3.5Zm10.7 9.8L6.2 21l11.3-6.1-2.8-1.6Zm0-2.6 2.8-1.6L6.2 3l8.5 7.7Zm4.4-.8-3 1.8 3 1.7 1.5-.9a.9.9 0 0 0 0-1.7l-1.5-.9Z"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a8 8 0 0 1 7.4 5H17v2h6V5h-2v2.3A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8Zm8 8a8 8 0 0 1-15.4 3H7v-2H1v6h2v-2.3A10 10 0 0 0 22 12h-2Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.8 8.1 3 4 6.9 4c2.1 0 3.6 1.1 5.1 2.9C13.5 5.1 15 4 17.1 4 21 4 23.2 8.1 21.6 11.7 19.5 16.4 12 21 12 21Z"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <svg class="confetti" viewBox="0 0 760 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="#fff" opacity="0.22">
+      <circle cx="680" cy="40" r="26"/><circle cx="610" cy="150" r="12"/><circle cx="40" cy="170" r="16"/>
+      <path d="m520 40 6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/>
+      <path d="m720 140 4 8 9 1-6 6 1 9-8-4-8 4 1-9-6-6 9-1z"/>
+      <path d="m150 26 4 8 9 1-6 6 1 9-8-4-8 4 1-9-6-6 9-1z"/>
+    </g>
+  </svg>
+  <div class="inner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 48 48">
+          <circle cx="24" cy="26" r="16" fill="#ffb74d"/>
+          <circle cx="12" cy="13" r="6" fill="#ff8f00"/><circle cx="36" cy="13" r="6" fill="#ff8f00"/>
+          <circle cx="18" cy="24" r="2.6" fill="#2b2118"/><circle cx="30" cy="24" r="2.6" fill="#2b2118"/>
+          <path d="M18 31c3 3 9 3 12 0" stroke="#2b2118" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Tinypedia: Bé Khám Phá</h1>
+        <p class="tag">Chính sách quyền riêng tư · Privacy Policy</p>
+      </div>
+    </div>
+    <p class="effective">
+      <svg width="18" height="18" aria-hidden="true"><use href="#i-refresh"/></svg>
+      Có hiệu lực từ / Effective: 03/11/2026 (November 3, 2026)
+    </p>
+  </div>
+</header>
+
 <main>
-  <h1>Tinypedia: Bé Khám Phá</h1>
-  <p class="meta">Chính sách quyền riêng tư · Privacy Policy<br>
-    Có hiệu lực từ / Effective: 30/10/2026 (October 30, 2026)</p>
-  <nav>
+  <nav aria-label="Ngôn ngữ / Language">
     <a href="#vi" hreflang="vi">Tiếng Việt</a>
     <a href="#en" hreflang="en">English</a>
   </nav>
 
-  <section id="vi" lang="vi">
-    <h2>Tiếng Việt</h2>
+  <section class="lang" id="vi" lang="vi">
+    <h2><span class="flag">VI</span> Tiếng Việt</h2>
     <p>Tinypedia: Bé Khám Phá (“ứng dụng”) là từ điển hình ảnh cho trẻ từ 3 đến 6 tuổi. Ứng dụng do nhà phát triển <strong>CrisKisa</strong> phát hành trên Google Play. Trang này giải thích ứng dụng làm gì với thông tin, áp dụng cho phiên bản hiện tại.</p>
 
-    <h3>Tóm tắt</h3>
-    <ul>
-      <li>Ứng dụng <strong>không thu thập, không gửi đi và không chia sẻ</strong> bất kỳ dữ liệu nào về bé hay gia đình.</li>
-      <li>Không quảng cáo, không tài khoản, không công cụ phân tích hay theo dõi.</li>
-      <li>Ứng dụng <strong>không có quyền truy cập Internet</strong>: mọi hình ảnh, âm thanh và giọng đọc đều nằm sẵn trong ứng dụng.</li>
-    </ul>
+    <div class="block">
+      <h3><span class="icon i-green"><svg width="20" height="20" aria-hidden="true"><use href="#i-heart"/></svg></span>Tóm tắt</h3>
+      <ul class="promises">
+        <li class="promise p1"><svg width="28" height="28" style="color:var(--green)" aria-hidden="true"><use href="#i-shield"/></svg><span>Ứng dụng <strong>không thu thập, không gửi đi và không chia sẻ</strong> bất kỳ dữ liệu nào về bé hay gia đình.</span></li>
+        <li class="promise p2"><svg width="28" height="28" style="color:var(--orange)" aria-hidden="true"><use href="#i-noads"/></svg><span>Không quảng cáo, không tài khoản, không công cụ phân tích hay theo dõi.</span></li>
+        <li class="promise p3"><svg width="28" height="28" style="color:var(--blue)" aria-hidden="true"><use href="#i-offline"/></svg><span>Ứng dụng <strong>không có quyền truy cập Internet</strong>: mọi hình ảnh, âm thanh và giọng đọc đều nằm sẵn trong ứng dụng.</span></li>
+      </ul>
+    </div>
 
-    <h3>Những gì được lưu trên máy</h3>
-    <p>Để lần sau kể chuyện khác và giữ thành tích của bé, ứng dụng chỉ lưu <strong>trên chính thiết bị</strong>:</p>
-    <ul>
-      <li>bé đã gặp những bạn nào và đã nghe câu chuyện nào của mỗi bạn;</li>
-      <li>số sao và thời gian nhanh nhất của trò ghép hình, cùng một ván ghép hình đang chơi dở;</li>
-      <li>các mức mê cung đã xong và thời gian nhanh nhất.</li>
-    </ul>
-    <p>Những thông tin này không rời khỏi thiết bị: ứng dụng tắt cả sao lưu lên đám mây lẫn chuyển dữ liệu sang máy mới. Chúng không gắn với tên hay danh tính của ai. Gỡ ứng dụng hoặc xoá dữ liệu ứng dụng trong phần Cài đặt của điện thoại sẽ xoá hết chúng.</p>
+    <div class="block">
+      <h3><span class="icon i-orange"><svg width="20" height="20" aria-hidden="true"><use href="#i-phone"/></svg></span>Những gì được lưu trên máy</h3>
+      <p>Để lần sau kể chuyện khác và giữ thành tích của bé, ứng dụng chỉ lưu <strong>trên chính thiết bị</strong>:</p>
+      <ul class="kept">
+        <li>bé đã gặp những bạn nào và đã nghe câu chuyện nào của mỗi bạn;</li>
+        <li>các mức ghép hình đã xong cùng thời gian nhanh nhất, và một lượt ghép hình đang làm dở;</li>
+        <li>các mức mê cung đã xong và thời gian nhanh nhất.</li>
+      </ul>
+      <p>Những thông tin này không rời khỏi thiết bị: ứng dụng tắt cả sao lưu lên đám mây lẫn chuyển dữ liệu sang máy mới. Chúng không gắn với tên hay danh tính của ai. Gỡ ứng dụng hoặc xoá dữ liệu ứng dụng trong phần Cài đặt của điện thoại sẽ xoá hết chúng.</p>
+    </div>
 
-    <h3>Giọng đọc</h3>
-    <p>Giọng đọc được tạo bằng công nghệ tổng hợp giọng nói của Microsoft Azure. Các đoạn âm thanh được tạo sẵn trước khi phát hành ứng dụng; khi bé dùng, ứng dụng không gửi chữ hay giọng nói nào đi đâu cả.</p>
+    <div class="block">
+      <h3><span class="icon i-blue"><svg width="20" height="20" aria-hidden="true"><use href="#i-voice"/></svg></span>Giọng đọc</h3>
+      <p>Giọng đọc được tạo bằng công nghệ tổng hợp giọng nói của Microsoft Azure. Các đoạn âm thanh được tạo sẵn trước khi phát hành ứng dụng; khi bé dùng, ứng dụng không gửi chữ hay giọng nói nào đi đâu cả.</p>
+    </div>
 
-    <h3>Hình ảnh và âm thanh thật</h3>
-    <p>Ảnh và tiếng kêu thật lấy từ nguồn có giấy phép sử dụng tự do (CC0, phạm vi công cộng, Pixabay, CC BY). Tác giả và giấy phép được ghi trong mục “Ghi công ảnh và âm thanh” của ứng dụng.</p>
+    <div class="block">
+      <h3><span class="icon i-green"><svg width="20" height="20" aria-hidden="true"><use href="#i-photo"/></svg></span>Hình ảnh và âm thanh thật</h3>
+      <p>Ảnh và tiếng kêu thật lấy từ nguồn có giấy phép sử dụng tự do (CC0, phạm vi công cộng, Pixabay, CC BY). Tác giả và giấy phép được ghi trong mục “Ghi công ảnh và âm thanh” của ứng dụng.</p>
+    </div>
 
-    <h3>Khi bố mẹ gửi góp ý</h3>
-    <p>Nếu bố mẹ gửi e-mail góp ý, chúng tôi nhận được địa chỉ e-mail và nội dung thư. Chúng chỉ được dùng để trả lời và cải thiện ứng dụng, không được chia sẻ cho ai khác. Bố mẹ có thể yêu cầu xoá thư bất kỳ lúc nào.</p>
+    <div class="block">
+      <h3><span class="icon i-orange"><svg width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg></span>Khi bố mẹ gửi góp ý</h3>
+      <p>Nếu bố mẹ gửi e-mail góp ý, chúng tôi nhận được địa chỉ e-mail và nội dung thư. Chúng chỉ được dùng để trả lời và cải thiện ứng dụng, không được chia sẻ cho ai khác. Bố mẹ có thể yêu cầu xoá thư bất kỳ lúc nào.</p>
+    </div>
 
-    <h3>Google Play</h3>
-    <p>Ứng dụng được phân phối qua Google Play. Việc tải và cài đặt chịu sự điều chỉnh của <a href="https://policies.google.com/privacy?hl=vi" rel="noopener">chính sách quyền riêng tư của Google</a>; ứng dụng không gửi thêm thông tin nào cho Google.</p>
+    <div class="block">
+      <h3><span class="icon i-blue"><svg width="20" height="20" aria-hidden="true"><use href="#i-store"/></svg></span>Google Play</h3>
+      <p>Ứng dụng được phân phối qua Google Play. Việc tải và cài đặt chịu sự điều chỉnh của <a href="https://policies.google.com/privacy?hl=vi" rel="noopener">chính sách quyền riêng tư của Google</a>; ứng dụng không gửi thêm thông tin nào cho Google.</p>
+    </div>
 
-    <h3>Thay đổi chính sách</h3>
-    <p>Nếu một phiên bản sau thay đổi bất kỳ điều gì ở trên, trang này sẽ được cập nhật trước khi phiên bản đó phát hành, với ngày hiệu lực mới.</p>
+    <div class="block">
+      <h3><span class="icon i-green"><svg width="20" height="20" aria-hidden="true"><use href="#i-refresh"/></svg></span>Thay đổi chính sách</h3>
+      <p>Nếu một phiên bản sau thay đổi bất kỳ điều gì ở trên, trang này sẽ được cập nhật trước khi phiên bản đó phát hành, với ngày hiệu lực mới.</p>
+    </div>
 
-    <h3>Liên hệ</h3>
-    <p>Nhà phát triển: CrisKisa.<br>Mọi câu hỏi, góp ý hoặc yêu cầu hỗ trợ: <a href="mailto:criskisa01@gmail.com">criskisa01@gmail.com</a></p>
+    <div class="block">
+      <h3><span class="icon i-orange"><svg width="20" height="20" aria-hidden="true"><use href="#i-heart"/></svg></span>Liên hệ</h3>
+      <div class="contact">
+        <span>Nhà phát triển: CrisKisa.<br>Mọi câu hỏi, góp ý hoặc yêu cầu hỗ trợ:</span>
+        <a class="mail" href="mailto:criskisa01@gmail.com">criskisa01@gmail.com</a>
+      </div>
+    </div>
   </section>
 
-  <section id="en" lang="en">
-    <h2>English</h2>
+  <section class="lang" id="en" lang="en">
+    <h2><span class="flag">EN</span> English</h2>
     <p>Tinypedia: Bé Khám Phá (“the app”) is a picture dictionary for children aged 3 to 6. It is published on Google Play by the developer <strong>CrisKisa</strong>. This page explains what the app does with information. It applies to the current version.</p>
 
-    <h3>In short</h3>
-    <ul>
-      <li>The app <strong>does not collect, send or share</strong> any data about the child or the family.</li>
-      <li>No ads, no accounts, no analytics or tracking tools.</li>
-      <li>The app <strong>has no Internet permission</strong>: every picture, sound and voice recording is built into the app.</li>
-    </ul>
+    <div class="block">
+      <h3><span class="icon i-green"><svg width="20" height="20" aria-hidden="true"><use href="#i-heart"/></svg></span>In short</h3>
+      <ul class="promises">
+        <li class="promise p1"><svg width="28" height="28" style="color:var(--green)" aria-hidden="true"><use href="#i-shield"/></svg><span>The app <strong>does not collect, send or share</strong> any data about the child or the family.</span></li>
+        <li class="promise p2"><svg width="28" height="28" style="color:var(--orange)" aria-hidden="true"><use href="#i-noads"/></svg><span>No ads, no accounts, no analytics or tracking tools.</span></li>
+        <li class="promise p3"><svg width="28" height="28" style="color:var(--blue)" aria-hidden="true"><use href="#i-offline"/></svg><span>The app <strong>has no Internet permission</strong>: every picture, sound and voice recording is built into the app.</span></li>
+      </ul>
+    </div>
 
-    <h3>What is kept on the device</h3>
-    <p>To tell a different story next time and keep the child's achievements, the app stores <strong>only on the device itself</strong>:</p>
-    <ul>
-      <li>which animals and plants the child has met, and which of their stories the child has heard;</li>
-      <li>the stars and best times of the jigsaw puzzle, and one unfinished puzzle;</li>
-      <li>the maze levels completed and their best times.</li>
-    </ul>
-    <p>This information never leaves the device: the app turns off both cloud backup and transfer to a new phone. It is not linked to anyone's name or identity. Uninstalling the app, or clearing its data in the phone's Settings, deletes all of it.</p>
+    <div class="block">
+      <h3><span class="icon i-orange"><svg width="20" height="20" aria-hidden="true"><use href="#i-phone"/></svg></span>What is kept on the device</h3>
+      <p>To tell a different story next time and keep the child's achievements, the app stores <strong>only on the device itself</strong>:</p>
+      <ul class="kept">
+        <li>which animals and plants the child has met, and which of their stories the child has heard;</li>
+        <li>the jigsaw levels done with their best times, and one unfinished jigsaw;</li>
+        <li>the maze levels completed and their best times.</li>
+      </ul>
+      <p>This information never leaves the device: the app turns off both cloud backup and transfer to a new phone. It is not linked to anyone's name or identity. Uninstalling the app, or clearing its data in the phone's Settings, deletes all of it.</p>
+    </div>
 
-    <h3>Voice</h3>
-    <p>The narration is made with Microsoft Azure speech synthesis. The recordings are produced before the app is released; while the child uses the app, no text or voice is sent anywhere.</p>
+    <div class="block">
+      <h3><span class="icon i-blue"><svg width="20" height="20" aria-hidden="true"><use href="#i-voice"/></svg></span>Voice</h3>
+      <p>The narration is made with Microsoft Azure speech synthesis. The recordings are produced before the app is released; while the child uses the app, no text or voice is sent anywhere.</p>
+    </div>
 
-    <h3>Photos and real sounds</h3>
-    <p>Photos and real sounds come from freely licensed sources (CC0, public domain, Pixabay, CC BY). Authors and licenses are listed in the app's credits screen.</p>
+    <div class="block">
+      <h3><span class="icon i-green"><svg width="20" height="20" aria-hidden="true"><use href="#i-photo"/></svg></span>Photos and real sounds</h3>
+      <p>Photos and real sounds come from freely licensed sources (CC0, public domain, Pixabay, CC BY). Authors and licenses are listed in the app's credits screen.</p>
+    </div>
 
-    <h3>When parents send feedback</h3>
-    <p>If a parent e-mails us, we receive the e-mail address and the message. They are used only to reply and to improve the app, and are never shared with anyone else. A parent may ask us to delete the message at any time.</p>
+    <div class="block">
+      <h3><span class="icon i-orange"><svg width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg></span>When parents send feedback</h3>
+      <p>If a parent e-mails us, we receive the e-mail address and the message. They are used only to reply and to improve the app, and are never shared with anyone else. A parent may ask us to delete the message at any time.</p>
+    </div>
 
-    <h3>Google Play</h3>
-    <p>The app is distributed through Google Play. Downloading and installing it is covered by <a href="https://policies.google.com/privacy?hl=en" rel="noopener">Google's privacy policy</a>; the app sends no further information to Google.</p>
+    <div class="block">
+      <h3><span class="icon i-blue"><svg width="20" height="20" aria-hidden="true"><use href="#i-store"/></svg></span>Google Play</h3>
+      <p>The app is distributed through Google Play. Downloading and installing it is covered by <a href="https://policies.google.com/privacy?hl=en" rel="noopener">Google's privacy policy</a>; the app sends no further information to Google.</p>
+    </div>
 
-    <h3>Changes</h3>
-    <p>If a later version changes anything above, this page will be updated before that version is released, with a new effective date.</p>
+    <div class="block">
+      <h3><span class="icon i-green"><svg width="20" height="20" aria-hidden="true"><use href="#i-refresh"/></svg></span>Changes</h3>
+      <p>If a later version changes anything above, this page will be updated before that version is released, with a new effective date.</p>
+    </div>
 
-    <h3>Contact</h3>
-    <p>Developer: CrisKisa.<br>Questions, feedback or support: <a href="mailto:criskisa01@gmail.com">criskisa01@gmail.com</a></p>
+    <div class="block">
+      <h3><span class="icon i-orange"><svg width="20" height="20" aria-hidden="true"><use href="#i-heart"/></svg></span>Contact</h3>
+      <div class="contact">
+        <span>Developer: CrisKisa.<br>Questions, feedback or support:</span>
+        <a class="mail" href="mailto:criskisa01@gmail.com">criskisa01@gmail.com</a>
+      </div>
+    </div>
   </section>
+
+  <footer>Tinypedia: Bé Khám Phá · CrisKisa</footer>
 </main>
 </body>
 </html>
