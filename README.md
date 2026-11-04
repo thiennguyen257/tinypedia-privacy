@@ -53,6 +53,8 @@ Wording rule: describe the current version only. Do not promise "always free", "
 | 2026-10-30 | `credits.html` added (photo credits for the store screenshots); darker accent colour on both pages for readable links (WCAG AA); the policy text unchanged |
 | 2026-11-03 | The app's stars now come from levels done, not from times: the jigsaw line says "levels done with their best times" (vi and en), no "stars" or game wording; new look (header band in the app's colours, summary cards, inline SVG icons, sticky language switch, dark mode and print styles), still one page with no scripts and no external assets |
 
+| 2026-11-04 | The kept list gains "how far the hoa bé ngoan flower of each practice pack has opened" (vi and en), for the practice corner's flowers in build 2; the header shows the new app logo (a chick beside a toddler), as inline SVG written by `app/tool/store_art.py --logo` |
+
 ## Contact
 
 CrisKisa, criskisa01@gmail.com
